@@ -20,6 +20,11 @@ var ArticleSchema = new Schema({
     required: true,
     trim: true
   },
+  image: {
+    type: String,
+    required: false,
+    trim: true
+  },
   content: {
     type: String,
     required: true,
