@@ -13,6 +13,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
       if (isValid) {
         var article = new Articles({
           title: this.title,
+          image: this.image,
           content: this.content
         });
         article.$save(function(response) {
@@ -20,6 +21,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         });
 
         this.title = '';
+        this.image = '';
         this.content = '';
       } else {
         $scope.submitted = true;

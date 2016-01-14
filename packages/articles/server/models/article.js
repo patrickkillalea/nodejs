@@ -43,6 +43,10 @@ ArticleSchema.path('title').validate(function(title) {
   return !!title;
 }, 'Title cannot be blank');
 
+ArticleSchema.path('image').validate(function(image) {
+  return !!image;
+}, 'Image cannot be blank');
+
 ArticleSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');

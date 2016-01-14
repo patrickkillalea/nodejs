@@ -55,6 +55,7 @@
           // test expected GET request
           $httpBackend.expectGET('articles').respond([{
             title: 'An Article about MEAN',
+            image: 'An Image about MEAN',
             content: 'MEAN rocks!'
           }]);
 
@@ -65,6 +66,7 @@
           // test scope value
           expect(scope.articles).toEqualData([{
             title: 'An Article about MEAN',
+            image: 'An Image about MEAN',
             content: 'MEAN rocks!'
           }]);
 
@@ -79,6 +81,7 @@
           var testArticleData = function() {
             return {
               title: 'An Article about MEAN',
+              image: 'An Image about MEAN',
               content: 'MEAN rocks!'
             };
           };
@@ -103,6 +106,7 @@
           var postArticleData = function() {
             return {
               title: 'An Article about MEAN',
+              image: 'An Image about MEAN',
               content: 'MEAN rocks!'
             };
           };
@@ -112,12 +116,14 @@
             return {
               _id: '525cf20451979dea2c000001',
               title: 'An Article about MEAN',
+              image: 'An Image about MEAN',
               content: 'MEAN rocks!'
             };
           };
 
           // fixture mock form input values
           scope.title = 'An Article about MEAN';
+          scope.image = 'An Image about MEAN';
           scope.content = 'MEAN rocks!';
 
           // test post request is sent
@@ -129,6 +135,7 @@
 
           // test form input(s) are reset
           expect(scope.title).toEqual('');
+          expect(scope.image).toEqual('');
           expect(scope.content).toEqual('');
 
           // test URL location to new object
